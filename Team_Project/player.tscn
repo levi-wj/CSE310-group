@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://bkp2uwfalit8d"]
+[gd_scene load_steps=3 format=3 uid="uid://drxoj2r4r8taf"]
 
-[ext_resource type="Texture2D" uid="uid://cqraufatskwp1" path="res://Retina/character_squareRed.png" id="1_pgqnt"]
+[ext_resource type="Texture2D" path="res://Retina/character_squareRed.png" id="1_pgqnt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eqv8u"]
 size = Vector2(64, 120)
