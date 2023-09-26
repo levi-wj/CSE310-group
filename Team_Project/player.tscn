@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bkp2uwfalit8d"]
+
+[ext_resource type="Texture2D" uid="uid://cqraufatskwp1" path="res://Retina/character_squareRed.png" id="1_pgqnt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eqv8u"]
+size = Vector2(64, 120)
+
+[node name="Player" type="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.3125, 0)
+scale = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_eqv8u")
+
+[node name="GFX" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_pgqnt")

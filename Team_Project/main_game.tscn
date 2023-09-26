@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://bjg4jdeepod1f"]
+
+[ext_resource type="PackedScene" uid="uid://b7cjbucn28bmf" path="res://level.tscn" id="1_h8xvb"]
+[ext_resource type="PackedScene" uid="uid://n62fsyv0tqij" path="res://platform.tscn" id="2_f58rc"]
+[ext_resource type="PackedScene" uid="uid://bkp2uwfalit8d" path="res://player.tscn" id="3_2ccr0"]
+[ext_resource type="Script" path="res://player.gd" id="4_6tgt6"]
+
+[node name="MainGame" type="Node2D"]
+
+[node name="Level" parent="." instance=ExtResource("1_h8xvb")]
+
+[node name="Ground" type="StaticBody2D" parent="Level"]
+position = Vector2(0, 576)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Level/Ground"]
+polygon = PackedVector2Array(0, 0, 1088, 0, 1088, 64, 0, 64)
+
+[node name="Polygon2D" type="Polygon2D" parent="Level/Ground"]
+polygon = PackedVector2Array(0, 0, 1152, 0, 1152, 64, 1152, 128, 0, 128)
+
+[node name="Platform" parent="." instance=ExtResource("2_f58rc")]
+position = Vector2(64, 352)
+
+[node name="Platform2" parent="." instance=ExtResource("2_f58rc")]
+position = Vector2(448, 128)
+
+[node name="Platform3" parent="." instance=ExtResource("2_f58rc")]
+position = Vector2(768, 352)
+
+[node name="Player" parent="." instance=ExtResource("3_2ccr0")]
+position = Vector2(192, 544)
+script = ExtResource("4_6tgt6")
