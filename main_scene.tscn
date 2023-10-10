@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://rkjllsxhooiu"]
-
-[ext_resource type="PackedScene" uid="uid://bjv5gtemfqkrv" path="res://polygon.tscn" id="1_ejsqb"]
-
-[node name="Node2D" type="Node2D"]
-
-[node name="Node2D" parent="." instance=ExtResource("1_ejsqb")]
-position = Vector2(-16, 13)
