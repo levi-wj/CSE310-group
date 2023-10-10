@@ -71,6 +71,7 @@ motion_scale = Vector2(0.3, 0)
 motion_mirroring = Vector2(420, 0)
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/ParallaxBackground/Trees"]
+visible = false
 offset_right = 419.0
 offset_bottom = 208.0
 texture = ExtResource("5_kg7bn")
