@@ -111,6 +111,7 @@ JUMP_VELOCITY = -320.0
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 zoom = Vector2(3, 3)
+process_callback = 0
 position_smoothing_enabled = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
@@ -120,7 +121,8 @@ shape = SubResource("RectangleShape2D_ety37")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 rotation = -1.5708
 sprite_frames = SubResource("SpriteFrames_b2aci")
-animation = &"run"
+animation = &"jump"
+frame_progress = 0.789286
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 scroll_base_offset = Vector2(600, 0)

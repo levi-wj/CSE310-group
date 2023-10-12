@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bmj6aujnhfvns"]
+[gd_scene load_steps=8 format=3 uid="uid://dmumlnssj6p7g"]
 
 [ext_resource type="PackedScene" uid="uid://wm4bk2rbs87w" path="res://tile_map.tscn" id="1_hloak"]
 [ext_resource type="Script" path="res://CharacterBody2D.gd" id="2_x5qvq"]
