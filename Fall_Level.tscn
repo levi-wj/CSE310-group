@@ -1,14 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://dmumlnssj6p7g"]
+[gd_scene load_steps=6 format=3 uid="uid://dmumlnssj6p7g"]
 
 [ext_resource type="PackedScene" uid="uid://wm4bk2rbs87w" path="res://tile_map.tscn" id="1_hloak"]
-[ext_resource type="Script" path="res://CharacterBody2D.gd" id="2_x5qvq"]
-[ext_resource type="Texture2D" uid="uid://byvse1qupywop" path="res://sprites/character/Male/Character1M_1_idle_1.png" id="3_fxwn2"]
 [ext_resource type="Texture2D" uid="uid://mi1dsw1mrb25" path="res://sprites/bg/FallBG.png" id="4_5lqsc"]
+[ext_resource type="PackedScene" uid="uid://by7lyy60j2myw" path="res://character.tscn" id="5_bccrw"]
 [ext_resource type="Texture2D" uid="uid://d055t5nxldugj" path="res://sprites/bg/FallHugeTree.png" id="5_kg7bn"]
 [ext_resource type="Texture2D" uid="uid://dboyyrn7s8x57" path="res://sprites/bg/FallTallTree.png" id="6_3btx1"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_l11a6"]
-size = Vector2(11, 22)
 
 [node name="Spring_Level" type="Node2D"]
 metadata/_edit_horizontal_guides_ = []
@@ -24,31 +20,6 @@ layer_1/y_sort_enabled = false
 layer_1/y_sort_origin = 0
 layer_1/z_index = 0
 layer_1/tile_data = PackedInt32Array(458745, 1966083, 11, 458746, 2031619, 11, 458747, 1966083, 11, 458748, 2031619, 11, 458749, 2097155, 11, 458750, 2162691, 11, 524284, 2162691, 11, 524285, 2097155, 11, 524286, 2162691, 11, 524281, 1966083, 11, 524282, 2031619, 11, 524283, 2097155, 11, 327673, 2031619, 10, 327678, 2097155, 10, 393214, 2097155, 11, 393213, 2162691, 11, 393212, 2097155, 11, 393211, 2031619, 11, 393210, 1966083, 11, 393209, 2031619, 11, 327674, 1966083, 10, 327675, 2031619, 10, 327676, 2097155, 10, 327677, 2162691, 10, 589817, 1966083, 11, 589818, 2031619, 11, 589819, 1966083, 11, 589820, 2031619, 11, 589821, 2097155, 11, 589822, 2162691, 11)
-
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-position = Vector2(-56, 42)
-collision_layer = 2
-script = ExtResource("2_x5qvq")
-SPEED = 150.0
-JUMP_VELOCITY = -300.0
-
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
-position = Vector2(0, -36)
-zoom = Vector2(3, 3)
-process_callback = 0
-limit_left = -200
-limit_bottom = 150
-position_smoothing_enabled = true
-position_smoothing_speed = 10.0
-
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
-rotation = -1.5708
-scale = Vector2(0.75, 0.75)
-texture = ExtResource("3_fxwn2")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(0.5, 1)
-shape = SubResource("RectangleShape2D_l11a6")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -88,3 +59,6 @@ offset_right = 419.0
 offset_bottom = 208.0
 texture = ExtResource("6_3btx1")
 stretch_mode = 1
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("5_bccrw")]
+position = Vector2(-48, 37)
