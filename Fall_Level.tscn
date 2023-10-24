@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://d055t5nxldugj" path="res://sprites/bg/FallHugeTree.png" id="5_kg7bn"]
 [ext_resource type="Texture2D" uid="uid://dboyyrn7s8x57" path="res://sprites/bg/FallTallTree.png" id="6_3btx1"]
 
-[node name="Spring_Level" type="Node2D"]
+[node name="Spring_Level2" type="Node2D"]
 metadata/_edit_horizontal_guides_ = []
 
 [node name="TileMap" parent="." instance=ExtResource("1_hloak")]
