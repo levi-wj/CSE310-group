@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://dk2llwpqfi67w"]
+
+[ext_resource type="Texture2D" uid="uid://c0244pm2vexx" path="res://sprites/enemies/ant_red_1.png" id="1_0qt5m"]
+[ext_resource type="Script" path="res://enemy_ant.gd" id="1_n7jab"]
+[ext_resource type="Texture2D" uid="uid://ckcf26tarkx1j" path="res://sprites/enemies/ant_red_2.png" id="2_i0g0l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kk2uk"]
+size = Vector2(16, 10)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rft75"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_i0g0l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_0qt5m")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[node name="Ant_Red" type="CharacterBody2D"]
+collision_mask = 3
+script = ExtResource("1_n7jab")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_kk2uk")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_rft75")
+animation = &"walk"
+frame_progress = 0.567025
+
+[node name="GroundCheck" type="RayCast2D" parent="."]
+target_position = Vector2(0, 15)
