@@ -5,6 +5,10 @@ extends CharacterBody2D
 @export var JUMP_VELOCITY = -400.0
 @export var MAX_BULLETS = 2
 @export var BULLET_KNOCKBACK = 100
+@export var CAMERA_LEFT_LIMIT = -100
+@export var CAMERA_TOP_LIMIT =-500
+@export var CAMERA_RIGHT_LIMIT =700
+@export var CAMERA_BOTTOM_LIMIT = 200
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -13,7 +17,16 @@ var x_knockback = 0
 
 @onready var _animated_sprite = $AnimatedSprite2D
 @onready var fireball = preload("res://fireball.tscn")
+@onready var camera = $Camera2D
 
+func _ready():
+	_update_camera()
+
+func _update_camera():
+	camera.limit_left = CAMERA_LEFT_LIMIT
+	camera.limit_top = CAMERA_TOP_LIMIT
+	camera.limit_right = CAMERA_RIGHT_LIMIT
+	camera.limit_bottom = CAMERA_BOTTOM_LIMIT
 
 func _physics_process(delta):
 	var onfloor = is_on_floor()
