@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://by7lyy60j2myw"]
+[gd_scene load_steps=23 format=3 uid="uid://by7lyy60j2myw"]
 
 [ext_resource type="Script" path="res://CharacterBody2D.gd" id="1_oau1r"]
 [ext_resource type="Texture2D" uid="uid://b6ul7sqp2wqyv" path="res://sprites/character/Male/Character1M_1_idle_0.png" id="2_7deso"]
@@ -95,6 +95,9 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hvqsv"]
+size = Vector2(15, 30)
+
 [node name="CharacterBody2D" type="CharacterBody2D" groups=["Player"]]
 position = Vector2(23, 55)
 collision_layer = 2
@@ -117,3 +120,11 @@ shape = SubResource("RectangleShape2D_ety37")
 rotation = -1.5708
 sprite_frames = SubResource("SpriteFrames_b2aci")
 animation = &"idle"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-0.5, 2)
+shape = SubResource("RectangleShape2D_hvqsv")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
