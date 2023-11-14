@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://cj762gt4yv1h"]
+
+[ext_resource type="Script" path="res://bullets_left_ui.gd" id="1_yxaue"]
+[ext_resource type="PackedScene" uid="uid://rkwc8u8sdtjy" path="res://fireball_ui.tscn" id="2_484mw"]
+
+[node name="bullets_left_ui" type="MarginContainer"]
+z_index = 100
+layout_direction = 3
+offset_left = 25.0
+offset_top = 20.0
+offset_right = 40.0
+offset_bottom = 40.0
+size_flags_vertical = 0
+script = ExtResource("1_yxaue")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+
+[node name="TextureRect" parent="HBoxContainer" instance=ExtResource("2_484mw")]
+layout_mode = 2

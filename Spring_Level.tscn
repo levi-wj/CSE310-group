@@ -1,10 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://y8p75tlfdgc6"]
+[gd_scene load_steps=6 format=3 uid="uid://c0y12nnbrmw4w"]
 
 [ext_resource type="PackedScene" uid="uid://wm4bk2rbs87w" path="res://tile_map.tscn" id="1_bireh"]
 [ext_resource type="Texture2D" uid="uid://v28nsinh2uux" path="res://sprites/bg/SpringBG.png" id="2_rgcr2"]
-[ext_resource type="PackedScene" uid="uid://dk2llwpqfi67w" path="res://ant_red.tscn" id="4_7lpcr"]
+[ext_resource type="PackedScene" path="res://ant_red.tscn" id="4_7lpcr"]
 [ext_resource type="PackedScene" uid="uid://by7lyy60j2myw" path="res://character.tscn" id="5_mxl5e"]
-[ext_resource type="PackedScene" uid="uid://dcfyh40g6up8i" path="res://ant_gray.tscn" id="5_rtcuw"]
+[ext_resource type="PackedScene" path="res://ant_gray.tscn" id="5_rtcuw"]
 
 [node name="Spring_Level" type="Node2D"]
 metadata/_edit_horizontal_guides_ = []
