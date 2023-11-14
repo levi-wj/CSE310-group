@@ -1,12 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://dmumlnssj6p7g"]
+[gd_scene load_steps=7 format=3 uid="uid://dmumlnssj6p7g"]
 
 [ext_resource type="PackedScene" uid="uid://wm4bk2rbs87w" path="res://tile_map.tscn" id="1_hloak"]
 [ext_resource type="Texture2D" uid="uid://mi1dsw1mrb25" path="res://sprites/bg/FallBG.png" id="4_5lqsc"]
 [ext_resource type="PackedScene" uid="uid://by7lyy60j2myw" path="res://character.tscn" id="5_bccrw"]
 [ext_resource type="Texture2D" uid="uid://d055t5nxldugj" path="res://sprites/bg/FallHugeTree.png" id="5_kg7bn"]
 [ext_resource type="Texture2D" uid="uid://dboyyrn7s8x57" path="res://sprites/bg/FallTallTree.png" id="6_3btx1"]
+[ext_resource type="PackedScene" uid="uid://cj762gt4yv1h" path="res://bullets_left_ui.tscn" id="6_n7gnb"]
 
-[node name="Spring_Level2" type="Node2D"]
+[node name="Fall_Level" type="Node2D"]
 metadata/_edit_horizontal_guides_ = []
 
 [node name="TileMap" parent="." instance=ExtResource("1_hloak")]
@@ -23,6 +24,12 @@ layer_1/tile_data = PackedInt32Array(458745, 1966083, 11, 458746, 2031619, 11, 4
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
+[node name="bullets_left_ui" parent="CanvasLayer" instance=ExtResource("6_n7gnb")]
+offset_left = 18.0
+offset_top = 19.0
+offset_right = 318.0
+offset_bottom = 69.0
+
 [node name="ParallaxBackground" type="ParallaxBackground" parent="CanvasLayer"]
 
 [node name="BG" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground"]
@@ -38,11 +45,11 @@ texture = ExtResource("4_5lqsc")
 stretch_mode = 1
 
 [node name="Trees" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground"]
+visible = false
 motion_scale = Vector2(0.3, 0)
 motion_mirroring = Vector2(420, 0)
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/ParallaxBackground/Trees"]
-visible = false
 offset_right = 419.0
 offset_bottom = 208.0
 texture = ExtResource("5_kg7bn")
@@ -62,3 +69,6 @@ stretch_mode = 1
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("5_bccrw")]
 position = Vector2(-48, 37)
+BULLET_KNOCKBACK = 300
+CAMERA_LEFT_LIMIT = -200
+CAMERA_BOTTOM_LIMIT = 130
