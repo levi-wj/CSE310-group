@@ -1,7 +1,5 @@
 extends Area2D
 
-class_name Projectile
-
 @export var speed = 100
 
 func _ready():
