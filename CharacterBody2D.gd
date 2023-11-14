@@ -85,3 +85,6 @@ func shoot(direction):
 	get_tree().get_root().add_child(fireball_instance)
 	fireball_instance.transform.origin = transform.origin
 	fireball_instance.rotation = deg_to_rad(direction)
+	
+
+
