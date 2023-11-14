@@ -78,6 +78,8 @@ func _physics_process(delta):
 	
 	x_knockback = lerpf(x_knockback, 0, .3)
 	
+	
+	
 	move_and_slide()
 
 func shoot(direction):
@@ -85,3 +87,8 @@ func shoot(direction):
 	get_tree().get_root().add_child(fireball_instance)
 	fireball_instance.transform.origin = transform.origin
 	fireball_instance.rotation = deg_to_rad(direction)
+
+
+func _on_area_2d_area_entered(area):
+	if area.is_in_group("deathBox"):
+		get_tree().reload_current_scene()
