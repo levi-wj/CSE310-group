@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+signal bullets_left_changed(amt)
 
 @export var SPEED = 300.0
 @export var JUMP_VELOCITY = -400.0
@@ -19,6 +20,7 @@ var x_knockback = 0
 @onready var fireball = preload("res://fireball.tscn")
 @onready var camera = $Camera2D
 
+
 func _ready():
 	_update_camera()
 
@@ -28,6 +30,12 @@ func _update_camera():
 	camera.limit_right = CAMERA_RIGHT_LIMIT
 	camera.limit_bottom = CAMERA_BOTTOM_LIMIT
 
+func set_bullets_left(amt):
+	if bullets_left != amt:
+		bullets_left = amt
+		bullets_left_changed.emit(bullets_left)
+
+
 func _physics_process(delta):
 	var onfloor = is_on_floor()
 
@@ -36,25 +44,22 @@ func _physics_process(delta):
 		velocity.y += gravity * delta
 		_animated_sprite.play("jump")
 	else:
-		bullets_left = MAX_BULLETS
+		set_bullets_left(MAX_BULLETS)
 		
 	# Handle bullets
 	if bullets_left > 0:
 		if Input.is_action_just_pressed("bullet_down"):
 			velocity.y += (BULLET_KNOCKBACK * -1) - (velocity.y)
-			bullets_left -= 1
 			shoot(90)
 		elif Input.is_action_just_pressed("bullet_up"):
 			velocity.y += BULLET_KNOCKBACK
-			bullets_left -= 1
 			shoot(270)
 		elif Input.is_action_just_pressed("bullet_left"):
 			x_knockback = BULLET_KNOCKBACK
-			bullets_left -= 1
 			shoot(180)
 		elif Input.is_action_just_pressed("bullet_right"):
 			x_knockback = BULLET_KNOCKBACK * -1
-			bullets_left -= 1
+			
 			shoot(0)
 
 	# Handle Jump.
@@ -76,13 +81,14 @@ func _physics_process(delta):
 		if onfloor:
 			_animated_sprite.play("idle")
 	
-	x_knockback = lerpf(x_knockback, 0, .3)
+	x_knockback = lerpf(x_knockback, 0, .12)
 	
 	move_and_slide()
 
 func shoot(direction):
 	var fireball_instance = fireball.instantiate()
 	get_tree().get_root().add_child(fireball_instance)
+	set_bullets_left(bullets_left - 1)
 	fireball_instance.transform.origin = transform.origin
 	fireball_instance.rotation = deg_to_rad(direction)
 	
