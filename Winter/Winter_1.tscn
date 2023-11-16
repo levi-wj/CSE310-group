@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://b1ut4b0owhndq"]
+[gd_scene load_steps=7 format=3 uid="uid://b1ut4b0owhndq"]
 
 [ext_resource type="Texture2D" uid="uid://65aiqmdngp38" path="res://sprites/Season_collection.png" id="1_l7j42"]
 [ext_resource type="PackedScene" uid="uid://by7lyy60j2myw" path="res://character.tscn" id="2_tiglu"]
 [ext_resource type="PackedScene" uid="uid://jpg8i054h142" path="res://deathBox.tscn" id="3_thu0w"]
+[ext_resource type="PackedScene" uid="uid://cj762gt4yv1h" path="res://bullets_left_ui.tscn" id="4_8nog4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_etfj0"]
 texture = ExtResource("1_l7j42")
@@ -8629,6 +8630,7 @@ layer_1/tile_data = PackedInt32Array(-393216, 1441792, 47, -393203, 1441792, 47,
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_tiglu")]
 position = Vector2(47, -57)
+MAX_BULLETS = 6
 CAMERA_LEFT_LIMIT = -95
 CAMERA_TOP_LIMIT = -480
 CAMERA_RIGHT_LIMIT = 720
@@ -8636,3 +8638,11 @@ CAMERA_BOTTOM_LIMIT = 0
 
 [node name="DeathBox" parent="." instance=ExtResource("3_thu0w")]
 position = Vector2(-488, 82)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="bullets_left_ui" parent="CanvasLayer" instance=ExtResource("4_8nog4")]
+offset_left = 98.0
+offset_top = 11.0
+offset_right = 398.0
+offset_bottom = 61.0
