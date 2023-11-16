@@ -21,7 +21,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Ant_Red" type="CharacterBody2D"]
+[node name="Ant_Red" type="CharacterBody2D" groups=["Enemies"]]
 collision_mask = 3
 script = ExtResource("1_n7jab")
 
