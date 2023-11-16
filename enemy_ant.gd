@@ -1,11 +1,8 @@
 extends CharacterBody2D
 
-
 const SPEED = 50.0
-@export
-var DIRECTION = -1
-@export
-var DETECTS_EDGE = true
+@export var DIRECTION = -1
+@export var DETECTS_EDGE = true
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var GRAVITY = ProjectSettings.get_setting("physics/2d/default_gravity")
