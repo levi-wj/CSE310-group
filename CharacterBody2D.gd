@@ -83,8 +83,6 @@ func _physics_process(delta):
 	
 	x_knockback = lerpf(x_knockback, 0, .12)
 	
-	
-	
 	move_and_slide()
 
 func shoot(direction):

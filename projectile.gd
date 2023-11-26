@@ -1,21 +1,21 @@
 extends Area2D
 
 @export var speed = 100
-@onready var playergroup = get_tree().get_nodes_in_group("Player")
+@onready var player = get_tree().get_first_node_in_group("Player")
 
 const CUTOFF_DISTANCE = 1000;
-var player;
 
 func _ready():
-	if playergroup:
-		player = playergroup[0]
 	body_entered.connect(_on_EnemyBodyEntered)
 
 func _physics_process(delta):
 	position += transform.x * speed * delta
-	var distance = global_transform.origin.distance_to(player.global_transform.origin)
-	if distance > CUTOFF_DISTANCE:
-		print("delete")
+	
+	if is_instance_valid(player):
+		var distance = global_transform.origin.distance_to(player.global_transform.origin)
+		if distance > CUTOFF_DISTANCE:
+			queue_free()
+	else:
 		queue_free()
 
 
