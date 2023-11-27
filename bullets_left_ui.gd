@@ -1,15 +1,12 @@
 extends MarginContainer
 
 @onready var hbox = $HBoxContainer;
-@onready var playergroup = get_tree().get_nodes_in_group("Player")
+@onready var player = get_tree().get_first_node_in_group("Player")
 @onready var fireball = preload("res://fireball_ui.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	if playergroup:
-		playergroup[0].bullets_left_changed.connect(_on_bullets_left_changed)
-	else:
-		print("Could not find player in scene!")
+	player.bullets_left_changed.connect(_on_bullets_left_changed)
 	
 func _on_bullets_left_changed(amt):
 	var children = hbox.get_children()
