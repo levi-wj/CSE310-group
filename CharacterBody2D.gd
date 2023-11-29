@@ -97,3 +97,7 @@ func _on_area_2d_area_entered(area):
 	if area.is_in_group("deathBox"):
 		get_tree().reload_current_scene()
 
+
+func _on_area_2d_body_entered(body):
+	if body.is_in_group("Enemies"):
+		get_tree().reload_current_scene()
