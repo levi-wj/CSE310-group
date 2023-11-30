@@ -96,7 +96,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hvqsv"]
-size = Vector2(15, 30)
+size = Vector2(18, 30)
 
 [node name="CharacterBody2D" type="CharacterBody2D" groups=["Player"]]
 position = Vector2(23, 55)
@@ -124,7 +124,8 @@ animation = &"idle"
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-0.5, 2)
+position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_hvqsv")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
