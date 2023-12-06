@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://b1ut4b0owhndq"]
+[gd_scene load_steps=8 format=3 uid="uid://b1ut4b0owhndq"]
 
 [ext_resource type="Texture2D" uid="uid://65aiqmdngp38" path="res://sprites/Season_collection.png" id="1_l7j42"]
 [ext_resource type="PackedScene" uid="uid://by7lyy60j2myw" path="res://character.tscn" id="2_tiglu"]
 [ext_resource type="PackedScene" uid="uid://jpg8i054h142" path="res://deathBox.tscn" id="3_thu0w"]
 [ext_resource type="PackedScene" uid="uid://cj762gt4yv1h" path="res://bullets_left_ui.tscn" id="4_8nog4"]
+[ext_resource type="PackedScene" uid="uid://codaxka0v4n4h" path="res://sign.tscn" id="5_mpq8m"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_etfj0"]
 texture = ExtResource("1_l7j42")
@@ -8646,3 +8647,7 @@ offset_left = 98.0
 offset_top = 11.0
 offset_right = 398.0
 offset_bottom = 61.0
+
+[node name="Sign" parent="." instance=ExtResource("5_mpq8m")]
+position = Vector2(138, -24)
+text = "Press Space or up-arrow to jump"
