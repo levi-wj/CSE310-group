@@ -12,6 +12,7 @@ func _process(delta):
 
 
 func _on_start_pressed():
+	GlobalTimer.start_timer()
 	get_tree().change_scene_to_file("res://Fall_Level.tscn")
 
 func _on_hiscores_pressed():
