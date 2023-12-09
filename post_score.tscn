@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dj4bgb6gfh7v6"]
+
+[ext_resource type="Script" path="res://post_score.gd" id="1_ndinm"]
+[ext_resource type="Script" path="res://HTTPRequest.gd" id="2_3jjn1"]
+
+[node name="PostScore" type="Node"]
+script = ExtResource("1_ndinm")
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+script = ExtResource("2_3jjn1")

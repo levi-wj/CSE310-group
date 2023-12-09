@@ -12,8 +12,12 @@ func _process(delta):
 
 
 func _on_start_pressed():
+
 	GlobalTimer.start_timer()
-	get_tree().change_scene_to_file("res://Fall_Level.tscn")
+	
+
+	get_tree().change_scene_to_file("res://Levels/Winter_1.tscn")
+
 
 func _on_hiscores_pressed():
 	pass # Replace with function body.
