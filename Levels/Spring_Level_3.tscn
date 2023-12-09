@@ -1,12 +1,14 @@
-[gd_scene load_steps=8 format=3 uid="uid://c8fef1wch8cqk"]
+[gd_scene load_steps=10 format=3 uid="uid://c8fef1wch8cqk"]
 
 [ext_resource type="PackedScene" uid="uid://wm4bk2rbs87w" path="res://tile_map.tscn" id="1_srjdm"]
 [ext_resource type="Texture2D" uid="uid://v28nsinh2uux" path="res://sprites/bg/SpringBG.png" id="2_nkgjo"]
-[ext_resource type="PackedScene" path="res://bullets_left_ui.tscn" id="3_t862g"]
+[ext_resource type="PackedScene" uid="uid://cj762gt4yv1h" path="res://bullets_left_ui.tscn" id="3_t862g"]
 [ext_resource type="PackedScene" uid="uid://by7lyy60j2myw" path="res://character.tscn" id="4_myabu"]
 [ext_resource type="PackedScene" uid="uid://dcfyh40g6up8i" path="res://ant_gray.tscn" id="5_fipa2"]
-[ext_resource type="PackedScene" path="res://deathBox.tscn" id="6_xjmmi"]
+[ext_resource type="PackedScene" uid="uid://jpg8i054h142" path="res://deathBox.tscn" id="6_xjmmi"]
 [ext_resource type="PackedScene" uid="uid://dk2llwpqfi67w" path="res://ant_red.tscn" id="7_nqvle"]
+[ext_resource type="PackedScene" uid="uid://blipys2swgkna" path="res://sign.tscn" id="8_inrxl"]
+[ext_resource type="PackedScene" path="res://next_level.tscn" id="9_cu47j"]
 
 [node name="Spring_Level" type="Node2D"]
 metadata/_edit_horizontal_guides_ = []
@@ -47,7 +49,8 @@ offset_bottom = 77.0
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("4_myabu")]
 position = Vector2(-106, 38)
-BULLET_KNOCKBACK = 250
+MAX_BULLETS = 3
+BULLET_KNOCKBACK = 200
 CAMERA_LEFT_LIMIT = -200
 CAMERA_TOP_LIMIT = -650
 CAMERA_RIGHT_LIMIT = 1535
@@ -98,3 +101,18 @@ position = Vector2(322, -402)
 [node name="Ant_Gray6" parent="." instance=ExtResource("5_fipa2")]
 position = Vector2(183, -338)
 DETECTS_EDGE = false
+
+[node name="Sign" parent="." instance=ExtResource("8_inrxl")]
+position = Vector2(-42, 48)
+text = "Leap of Faith!"
+
+[node name="Sign2" parent="." instance=ExtResource("8_inrxl")]
+position = Vector2(858, 16)
+text = "-->"
+
+[node name="Sign3" parent="." instance=ExtResource("8_inrxl")]
+position = Vector2(906, -352)
+text = "-->"
+
+[node name="Next_level" parent="." instance=ExtResource("9_cu47j")]
+position = Vector2(1444, -2)
