@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://by7lyy60j2myw" path="res://character.tscn" id="5_bccrw"]
 [ext_resource type="Texture2D" uid="uid://d055t5nxldugj" path="res://sprites/bg/FallHugeTree.png" id="5_kg7bn"]
 [ext_resource type="Texture2D" uid="uid://dboyyrn7s8x57" path="res://sprites/bg/FallTallTree.png" id="6_3btx1"]
-[ext_resource type="PackedScene" uid="uid://cj762gt4yv1h" path="res://bullets_left_ui.tscn" id="6_n7gnb"]
+[ext_resource type="PackedScene" path="res://bullets_left_ui.tscn" id="6_n7gnb"]
 
 [node name="Fall_Level" type="Node2D"]
 metadata/_edit_horizontal_guides_ = []
