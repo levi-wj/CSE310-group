@@ -1,22 +1,21 @@
 [gd_scene load_steps=4 format=3 uid="uid://dd7e7wbq1v71l"]
 
 [ext_resource type="Script" path="res://Next_level.gd" id="1_wlrlk"]
-
-[sub_resource type="QuadMesh" id="QuadMesh_71eyq"]
+[ext_resource type="Texture2D" uid="uid://b1mg2wb3gv24j" path="res://sprites/next_level.png" id="2_14us0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7pcjl"]
-size = Vector2(73, 51)
+size = Vector2(34, 34)
 
 [node name="Next_level" type="Area2D"]
+scale = Vector2(0.7, 0.7)
+collision_mask = 3
 script = ExtResource("1_wlrlk")
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
-position = Vector2(35.75, 24)
-scale = Vector2(72.5, 52)
-mesh = SubResource("QuadMesh_71eyq")
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2.16, 2.16)
+texture = ExtResource("2_14us0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(36.5, 23.5)
 shape = SubResource("RectangleShape2D_7pcjl")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
