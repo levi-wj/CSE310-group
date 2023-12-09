@@ -11,12 +11,7 @@ script/source = "extends Area2D
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$Label.text = text
-	pass # Replace with function body.
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
 "
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wh4x1"]

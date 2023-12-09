@@ -8661,6 +8661,14 @@ text = "Use the arrow keys to shoot fireballs"
 position = Vector2(1125, -54)
 text = "Fireballs kill ants"
 
+[node name="Sign_yeet" parent="Signs" instance=ExtResource("5_mpq8m")]
+position = Vector2(2074, -311)
+text = "Go ahead and jump -->"
+
+[node name="Sign_end" parent="Signs" instance=ExtResource("5_mpq8m")]
+position = Vector2(2329, -101)
+text = "Congragulations now go and conquer!"
+
 [node name="DeathBoxes" type="Node2D" parent="."]
 
 [node name="DeathBox" parent="DeathBoxes" instance=ExtResource("3_thu0w")]
@@ -8691,7 +8699,3 @@ position = Vector2(1874, -96)
 
 [node name="Ant_Gray6" parent="Ants" instance=ExtResource("6_h5uun")]
 position = Vector2(1795, -207)
-
-[node name="Node2D" parent="." instance=ExtResource("5_mpq8m")]
-position = Vector2(2329, -101)
-text = "Congragulations now go and conquer the storm!"
