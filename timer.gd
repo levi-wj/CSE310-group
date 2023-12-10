@@ -22,4 +22,4 @@ func stop_timer():
 	running = false
 
 func get_score():
-	return time
+	return int(time)
