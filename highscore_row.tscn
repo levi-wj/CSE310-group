@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=3 uid="uid://cvkaiuyu6aump"]
+
+[ext_resource type="Texture2D" uid="uid://cu8wl6txg1ogg" path="res://sprites/character/fireball.png" id="1_14oyb"]
+
+[node name="highscore_row" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 560.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 43.0
+offset_right = 508.0
+offset_bottom = 42.0
+theme_override_font_sizes/font_size = 22
+text = "Hello! "
+vertical_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel"]
+position = Vector2(27, 19)
+scale = Vector2(1.76, 1.76)
+texture = ExtResource("1_14oyb")
