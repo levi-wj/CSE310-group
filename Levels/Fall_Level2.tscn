@@ -74,13 +74,13 @@ stretch_mode = 1
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("5_bccrw")]
 position = Vector2(-48, 37)
-BULLET_KNOCKBACK = 300
+BULLET_KNOCKBACK = 200
 CAMERA_LEFT_LIMIT = -200
 CAMERA_RIGHT_LIMIT = 1800
 CAMERA_BOTTOM_LIMIT = 130
 
 [node name="Next_level" parent="." instance=ExtResource("7_pvviy")]
-position = Vector2(1638, -371)
+position = Vector2(1638, -342)
 
 [node name="Ant_Red" parent="." instance=ExtResource("8_shisr")]
 position = Vector2(334, -19)
