@@ -1,7 +1,3 @@
-
-
-
-
 # Firefly
 
 Firefly is an engaging 2D platformer that immerses players in the role of a protagonist endowed with incredible fireball superpowers. Tasked with breaking the grip of an endless winter, your character embarks on a captivating journey to warm up the world.
