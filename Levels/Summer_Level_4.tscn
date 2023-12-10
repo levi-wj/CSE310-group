@@ -47,7 +47,7 @@ offset_right = 329.0
 offset_bottom = 77.0
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("4_v41gd")]
-position = Vector2(760, -252)
+position = Vector2(-167, 37)
 MAX_BULLETS = 4
 BULLET_KNOCKBACK = 200
 CAMERA_LEFT_LIMIT = -400
@@ -83,7 +83,11 @@ position = Vector2(456, -114)
 position = Vector2(628, -242)
 
 [node name="Ant_Gray3" parent="." instance=ExtResource("5_nfy1r")]
-position = Vector2(1002, -241)
+position = Vector2(1179, -370)
+DIRECTION = 1
 
 [node name="Ant_Red3" parent="." instance=ExtResource("7_4wgr1")]
 position = Vector2(609, -242)
+
+[node name="Ant_Red4" parent="." instance=ExtResource("7_4wgr1")]
+position = Vector2(1230, -690)
